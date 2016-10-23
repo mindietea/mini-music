@@ -131,8 +131,13 @@ function mapKey(letter_idx, buttonID) {
 		this.style.visibility = "hidden";
 	});
 
+
 	var soundID = buttonID.replace('setter', '');
 	keymap[letter_idx] = soundID;
+
+	// Adds sound to tooltip
+	var char = String.fromCharCode(letter_idx + 97);
+	$('#' + char).attr('data-tooltip', sounds[soundID].name);
 }
 
 /*----------------------------------------------*/
@@ -147,6 +152,8 @@ function music() {
 
 	createSound(2, "pop/Ho.wav", "Oh!");
 	mapKey(15, "setter2");
+
+
 
 	fullUpdateSoundList();
 }
