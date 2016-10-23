@@ -8,9 +8,6 @@
 
 <body>
 
-	<audio id="blizzSound" src="skysounds/blizz808.wav"></audio>
-
-
 	<button id="testB" onclick="test()">The Test Button</button>
 
 	<br><br>
@@ -21,8 +18,9 @@
 
 <!-- TODO Don't allow non-sound files. -->
 			<div id="soundupload">
-				Upload a new sound<br>
-				File: <input id="fileInput" type="file" /><br>
+				Upload a new sound:<br>
+				<input id="fileInput" type="file" \><br>
+				<!--File URL: <input id="fileInput" type="text"><br>-->
 				Sound Name: <input id="nameInput" type="text"><br>
 
 				<button onclick="addSound()">Add sound</button>
@@ -48,7 +46,7 @@
 	<div id="keymapper">
 		<h2>Keys</h2>
 
-		<button onclick="playSound(0)" id="Q">Q</button>
+		<button onclick="" id="Q">Q</button>
 				<button onclick="playSound()" id="W">W</button>
 
 	</div>

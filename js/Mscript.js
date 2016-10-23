@@ -1,5 +1,3 @@
-function test() {
-}
 
 var sounds = [];
 
@@ -7,12 +5,12 @@ var sounds = [];
 
 // Creates and adds the sound object to the array
 // DONE
-function createSound(soundID, filename, soundname) {
+function createSound(soundID, file, soundname) {
 
 	var sound = new Audio();
 	var source = document.createElement("source");
 	source.type = "audio/mpeg";
-	source.src = filename;
+	source.src = file;
 	sound.appendChild(source);
 
 
@@ -32,15 +30,45 @@ function playSound(soundID) {
 
 function addSound() {
 	soundID = sounds.length;
-	filename = $('#fileInput')[0].files[0].name;
+
+	// TODO Make this work for file uploads
+	//filename = $('#fileInput').val();
+
+	var filename = document.getElementById('fileInput');
+	var file = URL.createObjectURL(filename.files[0]);
+
 	soundname = $('#nameInput').val();
-	createSound(soundID, filename, soundname);
+	// TODO set default string if soundname is empty
+
+	createSound(soundID, file, soundname);
+	fullUpdateSoundList();
 }
 
-/*function updateSoundList() {
+function fullUpdateSoundList() {
+	$('#soundlist').empty();
 	for(var i = 0; i < sounds.length; i++) {
 		var soundElement = document.createElement("div");
-		soundElement.innerHTML = "Test";
-		$('#soundlist').appendChild(soundElement);
+		soundElement.innerHTML = sounds[i].name;
+		$('#soundlist').append(soundElement);
 	}
-}*/
+}
+
+/*------------------*/
+// Pressing keys to play sound
+
+window.addEventListener("keypress", checkKey, false);
+
+function checkKey(e) {
+	if(e.keyCode == "13") {
+		playSound(0);
+	}
+}
+
+function test() {
+	alert();
+}
+function map() {
+
+}
+
+
