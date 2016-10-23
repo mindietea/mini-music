@@ -1,6 +1,10 @@
+function test() {
+	alert();
+}
+
 
 var sounds = [];
-
+var mappedSound = null;
 // Creating the sound
 
 // Creates and adds the sound object to the array
@@ -49,8 +53,19 @@ function fullUpdateSoundList() {
 	for(var i = 0; i < sounds.length; i++) {
 		var soundElement = document.createElement("div");
 		soundElement.innerHTML = sounds[i].name;
+
+		var setButton = document.createElement("button");
+		setButton.onclick = function() {
+			setKeySound(i);
+		}
+
 		$('#soundlist').append(soundElement);
+		$('#soundlist').append(setButton);
 	}
+}
+
+function setKeySound(index) {
+	mappedSound = sounds[index];
 }
 
 /*------------------*/
@@ -64,11 +79,9 @@ function checkKey(e) {
 	}
 }
 
-function test() {
-	alert();
-}
-function map() {
-
+function mapKey(letter) {
+	// Changes all the "setButtons" for each sound to a function that "setsQSound" to its index
+	
 }
 
 
