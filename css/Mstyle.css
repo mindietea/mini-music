@@ -44,23 +44,30 @@ h2 {
 	vertical-align: top
 }
 
-#Q, #W, #E, #R, #T, #Y, #U, #I, #O, #P {
+.key {
 	font-family: Century Gothic;
 	font-size: 20px;
 	color: white;
   	background-color: var(--blue); 
   	border:4px solid; border-radius: 3px;
   	border-color: white; 
+  	margin-bottom: 20px;
   	padding: 0px;
   	outline:0;
   	width: 50px;
   	height: 50px;
 } 
 
-#Q:hover {
+.key:hover {
 	color:var(--blue);
   	background-color: white; 
 } 
-#Q:active {
+.key:active {
 	font-size: 18px;
 } 
+.key:focused {
+	outline:1;
+	color:var(--blue);
+  	background-color: white; 
+  	font-size: 18px;
+}
