@@ -9,6 +9,8 @@ function test() {
 
 }
 
+// TODO Gray out all but the clicked key when clicked
+// Cancel the startMapKey if click anywhere but a sound button
 
 var sounds = [];
 var keymap = new Array(26);
@@ -17,7 +19,6 @@ var mappedSound = null;
 // Creating the sound
 
 // Creates and adds the sound object to the array
-// DONE
 function createSound(soundID, file, soundname) {
 
 	var sound = new Audio();
@@ -40,6 +41,8 @@ function playSound(soundID) {
 // Uploading a sound
 
 function addSound() {
+
+
 	soundID = sounds.length;
 
 	// TODO Make this work for file uploads
@@ -53,18 +56,25 @@ function addSound() {
 
 	createSound(soundID, file, soundname);
 	fullUpdateSoundList();
+
+	// Clears form
+	$('#fileInput').value = "";
+	$('#nameInput').value = "";
 }
 
 function fullUpdateSoundList() {
 	$('#soundlist').empty();
 	for(var i = 0; i < sounds.length; i++) {
-		var soundElement = document.createElement("div");
-		soundElement.innerHTML = sounds[i].name;
+		var soundElement = document.createElement("span");
+		var displayIndex = i + 1;
+		soundElement.innerHTML = "<br>" + displayIndex + ". " + sounds[i].name;
 		var soundID = "sound" + i;
 		soundElement.id = soundID;
 
 		var setButton = document.createElement("button");
+		setButton.innerHTML = "select";
 		setButton.className = "soundsetter";
+		setButton.style.visibility = "hidden";
 		var setID = "setter" + i;
 		setButton.id = setID;
 
@@ -105,7 +115,8 @@ function startMapKey(letter) {
 	$('.soundsetter').each(function(i,item) {
 		var charCode = letter.charCodeAt(0);
 		//console.log("This ID: " + this.id);
-		$(item).attr('onclick','mapKey('+letter_code+', this.id);');
+		$(item).attr('onclick','mapKey(' + letter_code + ', this.id);');
+				this.style.visibility = "visible";
 	});
 
 	// Turn off clicking all keys, highlight sounds until a setButton is clicked
@@ -113,8 +124,16 @@ function startMapKey(letter) {
 
 // TODO make it take in this id#
 function mapKey(letter_idx, buttonID) {
+
+	// Re-hides the setting buttons
+	$('.soundsetter').each(function(i,item) {
+		this.style.visibility = "hidden";
+	});
+
 	//console.log("This 2 ID: " + buttonID);
 	var soundID = buttonID.replace('setter', '');
 	keymap[letter_idx] = soundID;
 	//console.log("Mapping key " + soundID);
 }
+
+/*----------------------------------------------*/
