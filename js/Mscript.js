@@ -34,7 +34,7 @@ function createSound(soundID, file, soundname) {
 // Plays a sound based on index. If it's already playing, pauses it and plays it.
 function playSound(soundID) {
 	sounds[soundID].audio.load();
-	sounds[soundID].audio.play();
+	sounds[soundID].audio.play();	
 }
 
 /*--------------------------------------------------*/
@@ -95,20 +95,30 @@ window.addEventListener("keypress", checkKey, false);
 
 function checkKey(e) {
 	letterCode = e.keyCode - 97;
-	//console.log("keycode " + e.keyCode);
 	if(0 <= letterCode && letterCode < 26) {
 		if(typeof keymap[letterCode] !== 'undefined') {
 			console.log(letterCode + " playing sound " + keymap[letterCode]);
 			playSound(keymap[letterCode]);
+
+			// Changes key color until sound is over
+			var char = String.fromCharCode(letterCode + 97);
+			var soundTime = sounds[keymap[letterCode]].duration * 1000;
+			$('#' + char).css('background-color', '#ff5ecc');
+			setTimeout(function(){ $('#' + char).css('background-color', '#0ad6ff'); }, soundTime);
 		}
-	}
-	if(e.keyCode == "13") {
-		playSound(0);
 	}
 }
 
 function startMapKey(letter) {
-	console.log("Starting mapping key");
+
+	// Fade other buttons
+	$('.key').each(function() {
+		if(this.id != letter) {
+			$(this).fadeTo(0.5, 0.5);
+	}
+	});
+
+
 	// Changes all the "setButtons" for each sound to a function that "setsQSound" to its index
 	letter_code = letter.charCodeAt(0) - 97;
 	//sconsole.log(letter.charCodeAt(0));
@@ -125,6 +135,13 @@ function startMapKey(letter) {
 // letter_idx is 0 to 25
 // buttonID is setter
 function mapKey(letter_idx, buttonID) {
+
+	// Visible other buttons
+	$('.key').each(function() {
+		
+			$(this).fadeTo(0.5, 1);
+	
+	});
 
 	// Re-hides the setting buttons
 	$('.soundsetter').each(function(i,item) {
@@ -147,12 +164,11 @@ function music() {
 	createSound(0, "pop/VivaLaVida.wav", "Viva la Vida");
 	mapKey(16, "setter0");
 
-	createSound(1, "pop/popculturebeat.wav", "introbeat");
-	mapKey(0, "setter1");
+	createSound(1, "pop/popbeat.wav", "introbeat");
+	mapKey(22, "setter1");
 
 	createSound(2, "pop/Ho.wav", "Oh!");
 	mapKey(15, "setter2");
-
 
 
 	fullUpdateSoundList();
