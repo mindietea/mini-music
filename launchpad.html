@@ -9,7 +9,7 @@
 
 <body>
 
-	<button id="MUSIC" onclick="music()">MUSIC</button>
+<button id="music" onclick="music()">MUSIC</button>
 
 	<br><br>
 
@@ -19,25 +19,28 @@
 
 <!-- TODO Don't allow non-sound files. -->
 			<div id="soundupload">
+			<br>
 				Upload a new sound:<br>
-				<input id="fileInput" type="file" \><br>
-				<!--File URL: <input id="fileInput" type="text"><br>-->
+				<input id="fileInput" type="file" \><br><br>
 				Sound Name: <input id="nameInput" type="text"><br>
+				<br>
+				<button id="addbutton" class="inpbutton" onclick="addSound()">Add sound</button>
 
-				<button onclick="addSound()">Add sound</button>
+				<br><br>
 			</div>
 
 			<br>
 
 			<div id="soundlistwrapper">
-				Your sounds<br>
+				your sounds<br>
 
 				<div id="soundlist"></div>
 
 			</div>
 		</div>
 		<div id="keymapper">
-			<h2>keys layout</h2>
+			<h2>musipad</h2>
+
 			<button class="key" onclick="startMapKey('q')" id="q">Q</button>
 			<button class="key" onclick="startMapKey('w')" id="w">W</button>
 			<button class="key" onclick="startMapKey('e')" id="e">E</button>

@@ -71,3 +71,35 @@ h2 {
   	background-color: white; 
   	font-size: 18px;
 }
+
+#soundupload {
+	background-color: white;
+	color: var(--pink);
+	font-size: 18px;
+	text-align: left;
+}
+
+#addbutton {
+	position: absolute;
+	right: 5px;
+}
+
+.inpbutton {
+	font-family: Century Gothic;
+	color: white;
+  	background-color: var(--pink); 
+  	border:4px solid; border-radius: 3px;
+  	border-color: white; 
+  	padding: 0px;
+  	outline:0;
+  	width: 100px;
+  	height: 20px;
+} 
+
+.inpbutton:hover {
+	background-color: #ff93c2;
+}
+
+#soundlistwrapper {
+	color: white;
+}
