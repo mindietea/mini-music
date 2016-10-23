@@ -19,9 +19,9 @@ h2 {
 
 #logo {
 	position: absolute;
-	left: 5%;
+	left: 20%;
 	font-weight: bold;
-	font-size: 40px;
+	font-size:60px;
 }
 
 #workspace {
@@ -82,11 +82,14 @@ h2 {
 }
 
 #soundupload {
-	margin-left: 10px;
-	background-color: var(--pink);
-	color: white;
+	margin-left: 20px;
+	margin-right:20px;
+	border-radius: 5px;
+	background-color: white;
+
+	color: var(--pink);
 	font-size: 18px;
-	text-align: left;
+	text-align: center;
 }
 
 #addbutton {
