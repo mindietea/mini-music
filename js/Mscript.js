@@ -11,7 +11,7 @@ function test() {
 
 
 var sounds = [];
-var keymap = [];
+var keymap = new Array(26);
 
 var mappedSound = null;
 // Creating the sound
@@ -86,10 +86,12 @@ window.addEventListener("keypress", checkKey, false);
 
 function checkKey(e) {
 	letterCode = e.keyCode - 97;
-	console.log("keycode " + e.keyCode);
+	//console.log("keycode " + e.keyCode);
 	if(0 <= letterCode && letterCode < 26) {
-		console.log(letterCode + " playing sound " + keymap[letterCode]);
-		playSound(keymap[letterCode]);
+		if(typeof keymap[letterCode] !== 'undefined') {
+			console.log(letterCode + " playing sound " + keymap[letterCode]);
+			playSound(keymap[letterCode]);
+		}
 	}
 	if(e.keyCode == "13") {
 		playSound(0);
@@ -103,7 +105,7 @@ function startMapKey(letter) {
 	//sconsole.log(letter.charCodeAt(0));
 	$('.soundsetter').each(function(i,item) {
 		var charCode = letter.charCodeAt(0);
-		console.log("This ID: " + this.id);
+		//console.log("This ID: " + this.id);
 		$(item).attr('onclick','mapKey('+letter_code+', this.id);');
 	});
 
@@ -112,12 +114,8 @@ function startMapKey(letter) {
 
 // TODO make it take in this id#
 function mapKey(letter_idx, buttonID) {
-	console.log("This 2 ID: " + buttonID);
+	//console.log("This 2 ID: " + buttonID);
 	var soundID = buttonID.replace('setter', '');
 	keymap[letter_idx] = soundID;
-	console.log("Mapping key " + soundID);
-}
-
-function mapKey_2(testinput, val) {
-	console.log("asdfasdf "+val);
+	//console.log("Mapping key " + soundID);
 }
