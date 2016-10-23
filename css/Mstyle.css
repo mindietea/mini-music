@@ -19,9 +19,18 @@ h2 {
 
 #logo {
 	position: absolute;
-	left: 20%;
+	left: 16%;
 	font-weight: bold;
-	font-size:60px;
+	font-size:70px;
+	color: var(--pink);
+}
+
+#logohi {
+	position: absolute;
+	left: 27%;
+	font-weight: bold;
+	font-size:70px;
+	color: var(--blue);;
 }
 
 #workspace {
@@ -31,7 +40,7 @@ h2 {
 #soundbox {
 	position: absolute;
 	left: 5%;
-    top: 10%;
+    top: 13%;
 	background-color: var(--pink);
 	width: 20%;
 	height: 75%;
@@ -43,11 +52,11 @@ h2 {
 
 #keymapper {
 	position: absolute;
-	left: 30%;
-    top: 10%;
+	left: 27%;
+    top: 13%;
 	background-color: var(--blue);
 	border-radius: 10px;
-	width: 65%;
+	width: 68%;
 	height: 75%;
 	display: inline-block;
 	vertical-align: top
@@ -97,7 +106,9 @@ h2 {
 	right: 5px;
 }
 
-.inpbutton {
+#addbutton {
+	position:absolute;
+	left: 45%;
 	font-family: Century Gothic;
 	color: white;
   	background-color: var(--pink); 
@@ -109,8 +120,13 @@ h2 {
   	height: 30px;
 } 
 
-.inpbutton:hover {
+#addbutton:hover {
 	background-color: #ff93c2;
+}
+
+#addbutton:active{
+	background-color: white;
+	color:var(--pink);
 }
 
 #soundlistwrapper {
