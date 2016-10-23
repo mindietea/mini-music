@@ -30,10 +30,9 @@ function createSound(soundID, file, soundname) {
 	sounds[soundID] = soundObject;
 }
 
-// Plays a sound based on index
-// DONE
+// Plays a sound based on index. If it's already playing, pauses it and plays it.
 function playSound(soundID) {
-	// TODO replace after implementing sound creation
+	sounds[soundID].audio.load();
 	sounds[soundID].audio.play();
 }
 
