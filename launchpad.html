@@ -12,8 +12,8 @@
 
 <body>
 
-	<div id="logo">minimusic.</div>
-
+	<div id="logo">mini</div>
+	<div id="logohi">music</div>
 	<br><br>
 	<div id="workspace">
 		<div id="soundbox">
@@ -24,8 +24,7 @@
 			<br>
 				Upload a new sound:<br>
 				<input id="fileInput" type="file" \><br><br>
-				Sound Name: <input id="nameInput" type="text"><br>
-				<br>
+				Sound Name: <input id="nameInput" type="text" multiple><br>
 				<button id="addbutton" class="inpbutton" onclick="addSound()">Add sound</button>
 
 				<br><br>
@@ -34,7 +33,7 @@
 			<br>
 
 			<div id="soundlistwrapper">
-				your sounds<br>
+				<h3>your sounds</h3><br>
 
 				<div id="soundlist"></div>
 
@@ -43,6 +42,7 @@
 		<div id="keymapper">
 			<h2>musipad</h2>
 
+			
 			<button class="key tooltip" data-tooltip="none" onclick="startMapKey('q')" id="q">Q</button>
 			<button class="key tooltip" data-tooltip="none" onclick="startMapKey('w')" id="w">W</button>
 			<button class="key tooltip" data-tooltip="none" onclick="startMapKey('e')" id="e">E</button>

@@ -147,7 +147,7 @@ function music() {
 	createSound(0, "pop/VivaLaVida.wav", "Viva la Vida");
 	mapKey(16, "setter0");
 
-	createSound(1, "pop/Pop Culture Beat.wav", "introbeat");
+	createSound(1, "pop/popculturebeat.wav", "introbeat");
 	mapKey(0, "setter1");
 
 	createSound(2, "pop/Ho.wav", "Oh!");
