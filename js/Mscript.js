@@ -131,8 +131,13 @@ function mapKey(letter_idx, buttonID) {
 		this.style.visibility = "hidden";
 	});
 
+
 	var soundID = buttonID.replace('setter', '');
 	keymap[letter_idx] = soundID;
+
+	// Adds sound to tooltip
+	var char = String.fromCharCode(letter_idx + 97);
+	$('#' + char).attr('data-tooltip', sounds[soundID].name);
 }
 
 /*----------------------------------------------*/
@@ -142,11 +147,13 @@ function music() {
 	createSound(0, "pop/VivaLaVida.wav", "Viva la Vida");
 	mapKey(16, "setter0");
 
-	createSound(1, "pop/Pop Culture Beat.wav", "introbeat");
+	createSound(1, "pop/popculturebeat.wav", "introbeat");
 	mapKey(0, "setter1");
 
 	createSound(2, "pop/Ho.wav", "Oh!");
 	mapKey(15, "setter2");
+
+
 
 	fullUpdateSoundList();
 }
