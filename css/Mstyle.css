@@ -1,0 +1,31 @@
+:root{
+    --dark: #272635;
+    --maincolor: #B1E5F2;
+    --highgray: #E8E9F3;
+    --midgray: #CECECE;
+    --lowgray:#A6A6A8;
+}
+
+body {
+	background-color: var(--highgray);
+	box-sizing: border-box;
+	font-family: Century Gothic;
+}
+
+#workspace {
+}
+
+#soundbox {
+	background-color: var(--midgray);
+	min-width: 200px;
+	min-height: 150px;
+	display: inline-block;
+	vertical-align: top
+}
+
+#keymapper {
+	background-color: var(--maincolor);
+	min-width: 300px;
+	min-height: 300px;
+	vertical-align: top
+}

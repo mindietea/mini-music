@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script type="text/javascript" src="js/Mscript.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="css/Mstyle.css">
+</head>
+
+<body>
+
+	<audio id="blizzSound" src="skysounds/blizz808.wav"></audio>
+
+
+	<button id="testB" onclick="test()">The Test Button</button>
+
+	<br><br>
+
+	<div id="workspace">
+		<div id="soundbox">
+			<h2>Sounds</h2>
+
+<!-- TODO Don't allow non-sound files. -->
+			<div id="soundupload">
+				Upload a new sound<br>
+				File: <input id="fileInput" type="file" /><br>
+				Sound Name: <input id="nameInput" type="text"><br>
+
+				<button onclick="addSound()">Add sound</button>
+			</div>
+
+			<br>
+
+			<div id="soundlistwrapper">
+				Your sounds<br>
+
+				<div id="soundlist"></div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+	<div id="keymapper">
+		<h2>Keys</h2>
+
+		<button onclick="playSound(0)" id="Q">Q</button>
+				<button onclick="playSound()" id="W">W</button>
+
+	</div>
+</div>
+</body>
+
+</html>
