@@ -17,9 +17,6 @@ h2 {
 	font-size: 40px;
 }
 
-h3 {
-	font-size: 35px;
-}
 #logo {
 	position: absolute;
 	left: 16%;
@@ -96,6 +93,7 @@ h3 {
 #soundupload {
 	margin-left: 20px;
 	margin-right:20px;
+	padding-bottom: 15px;
 	border-radius: 5px;
 	background-color: white;
 
@@ -135,7 +133,13 @@ h3 {
 #soundlistwrapper {
 	color: white;
 }
-
+#second {
+	position: absolute;
+	margin-top:10px;
+	margin-left: 17%;
+	font-size: 35px;
+	font-weight:bold;
+}
 #music {
 	font-family: Century Gothic;
 	font-size: 20px;
@@ -153,7 +157,11 @@ h3 {
 #music:hover {
 	background-color: #93d5ff;
 }
-
+#soundlist {
+	position: relative;
+	margin-top: 0px;
+	margin-left: 10px;
+}
 .tooltip::after {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 8px 8px 8px 0px;
