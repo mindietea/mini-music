@@ -14,6 +14,7 @@ body {
 
 h2 {
 	color: white;
+	font-size: 40px;
 }
 #workspace {
 	text-align: center;
@@ -54,8 +55,8 @@ h2 {
   	margin-bottom: 20px;
   	padding: 0px;
   	outline:0;
-  	width: 50px;
-  	height: 50px;
+  	width: 60px;
+  	height: 60px;
 } 
 
 .key:hover {
@@ -73,8 +74,9 @@ h2 {
 }
 
 #soundupload {
-	background-color: white;
-	color: var(--pink);
+	margin-left: 10px;
+	background-color: var(--pink);
+	color: white;
 	font-size: 18px;
 	text-align: left;
 }
@@ -93,7 +95,7 @@ h2 {
   	padding: 0px;
   	outline:0;
   	width: 100px;
-  	height: 20px;
+  	height: 30px;
 } 
 
 .inpbutton:hover {
