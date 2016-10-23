@@ -57,9 +57,9 @@ function addSound() {
 	createSound(soundID, file, soundname);
 	fullUpdateSoundList();
 
-	// Clears form
-	$('#fileInput').value = "";
-	$('#nameInput').value = "";
+	// Clear form
+	document.getElementById('fileInput').value = "";
+	document.getElementById('nameInput').value = "";
 }
 
 function fullUpdateSoundList() {
@@ -116,13 +116,14 @@ function startMapKey(letter) {
 		var charCode = letter.charCodeAt(0);
 		//console.log("This ID: " + this.id);
 		$(item).attr('onclick','mapKey(' + letter_code + ', this.id);');
-				this.style.visibility = "visible";
+		this.style.visibility = "visible";
 	});
 
 	// Turn off clicking all keys, highlight sounds until a setButton is clicked
 }
 
-// TODO make it take in this id#
+// letter_idx is 0 to 25
+// buttonID is setter
 function mapKey(letter_idx, buttonID) {
 
 	// Re-hides the setting buttons
@@ -130,10 +131,17 @@ function mapKey(letter_idx, buttonID) {
 		this.style.visibility = "hidden";
 	});
 
-	//console.log("This 2 ID: " + buttonID);
 	var soundID = buttonID.replace('setter', '');
 	keymap[letter_idx] = soundID;
-	//console.log("Mapping key " + soundID);
 }
 
 /*----------------------------------------------*/
+
+function music() {
+
+
+	createSound(0, "pop/VivaLaVida.wav", "Viva la Vida");
+	mapKey(16, "setter0");
+
+	fullUpdateSoundList();
+}
