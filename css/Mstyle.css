@@ -1,31 +1,68 @@
 :root{
-    --dark: #272635;
-    --maincolor: #B1E5F2;
+    --pink: #ff5ecc;
+    --blue: #0ad6ff;
     --highgray: #E8E9F3;
     --midgray: #CECECE;
-    --lowgray:#A6A6A8;
+    --white:#ffffff;
 }
 
 body {
-	background-color: var(--highgray);
+	background-color: white;
 	box-sizing: border-box;
 	font-family: Century Gothic;
 }
 
+h2 {
+	color: white;
+}
 #workspace {
+	text-align: center;
 }
 
 #soundbox {
-	background-color: var(--midgray);
-	min-width: 200px;
-	min-height: 150px;
+	position: absolute;
+	left: 5%;
+    top: 10%;
+	background-color: var(--pink);
+	width: 20%;
+	height: 75%;
+	border-radius: 10px;
+	display: inline-block;
+	vertical-align: top
+	
+}
+
+#keymapper {
+	position: absolute;
+	left: 30%;
+    top: 10%;
+	background-color: var(--blue);
+	border-radius: 10px;
+	width: 65%;
+	height: 75%;
 	display: inline-block;
 	vertical-align: top
 }
 
-#keymapper {
-	background-color: var(--maincolor);
-	min-width: 300px;
-	min-height: 300px;
-	vertical-align: top
-}
+#Q, #W, #E, #R, #T, #Y, #U, #I, #O, #P {
+	font-family: Century Gothic;
+	font-size: 20px;
+	color: white;
+  	background-color: var(--blue); 
+  	border:4px solid; border-radius: 3px;
+  	border-color: white; 
+  	padding: 15px 3%;
+  	outline:0;
+  	width: 3%;
+  	height: 5%;
+  	text-align: center;
+
+} 
+
+#Q:hover {
+	color:var(--blue);
+  	background-color: white; 
+} 
+#Q:active {
+	font-size: 18px;
+} 
