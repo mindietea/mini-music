@@ -32,9 +32,14 @@ function createSound(soundID, file, soundname) {
 }
 
 // Plays a sound based on index. If it's already playing, pauses it and plays it.
-function playSound(soundID) {
+function playSound(soundID, letterCode) {
 	sounds[soundID].audio.load();
-	sounds[soundID].audio.play();	
+	sounds[soundID].audio.play();
+
+	sounds[soundID].audio.onended = function() {
+				var char = String.fromCharCode(letterCode + 97);
+    $('#' + char).css('background-color','#0ad6ff')
+};
 }
 
 /*--------------------------------------------------*/
@@ -98,13 +103,17 @@ function checkKey(e) {
 	if(0 <= letterCode && letterCode < 26) {
 		if(typeof keymap[letterCode] !== 'undefined') {
 			console.log(letterCode + " playing sound " + keymap[letterCode]);
-			playSound(keymap[letterCode]);
+			playSound(keymap[letterCode], letterCode);
 
 			// Changes key color until sound is over
 			var char = String.fromCharCode(letterCode + 97);
-			var soundTime = sounds[keymap[letterCode]].duration * 1000;
 			$('#' + char).css('background-color', '#ff5ecc');
-			setTimeout(function(){ $('#' + char).css('background-color', '#0ad6ff'); }, soundTime);
+			var soundTime = sounds[keymap[letterCode]].audio.duration * 1000;
+
+			/*setTimeout(function() {
+    $('#' + char).css('background-color','#0ad6ff');
+},soundTime);*/
+
 		}
 	}
 }
