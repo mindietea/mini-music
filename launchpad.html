@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+
+<title>minimusic.</title>
+
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/Mscript.js"></script>
 	
@@ -9,10 +12,9 @@
 
 <body>
 
-<button id="music" onclick="music()">MUSIC</button>
+	<div id="logo">minimusic.</div>
 
 	<br><br>
-
 	<div id="workspace">
 		<div id="soundbox">
 			<h2>sounds</h2>
@@ -22,7 +24,7 @@
 			<br>
 				Upload a new sound:<br>
 				<input id="fileInput" type="file" \><br><br>
-				Sound Name: <input id="nameInput" type="text"><br>
+				Sound Name: <input id="nameInput" type="text" multiple><br>
 				<br>
 				<button id="addbutton" class="inpbutton" onclick="addSound()">Add sound</button>
 
@@ -69,6 +71,9 @@
 			<button class="key" onclick="startMapKey('b')" id="B">B</button>
 			<button class="key" onclick="startMapKey('n')" id="N">N</button>
 			<button class="key" onclick="startMapKey('m')" id="M">M</button>
+
+			<button id="music" onclick="music()">LOAD "POP"</button>
+
 		</div>
 	</div>
 
